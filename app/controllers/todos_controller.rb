@@ -9,4 +9,9 @@ class TodosController < ApplicationController
     todo = Todo.find(id)
     render plain: todo.to_displayable_string
   end
+
+  def create
+    new_todo = Todo.add_task(params)
+    render plain: "new todo created with id #{new_todo.id}"
+  end
 end
