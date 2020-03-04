@@ -16,4 +16,13 @@ class TodosController < ApplicationController
     new_todo = Todo.add_task(params)
     render plain: "new todo created with id #{new_todo.id}"
   end
+
+  def update
+    completed = params[:completed]
+    id = params[:id]
+    todo = Todo.find(id)
+    todo.completed = completed
+    todo.save
+    render plain: "changed completed status of todo#{id} to #{completed}"
+  end
 end
