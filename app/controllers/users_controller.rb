@@ -9,4 +9,8 @@ class UsersController < ApplicationController
     user = User.add_newuser(params)
     render plain: "a user created with id #{user.id}"
   end
+
+  def check
+    render plain: User.check(params)
+  end
 end

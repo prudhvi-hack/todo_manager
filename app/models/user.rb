@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
     password = newuser[:password]
     create!(name: name, gmail: email, password: password)
   end
+  def self.check(credentials)
+    where("gmail=? and password=?", credentials["email"], credentials["password"]).exists?
+  end
 end
