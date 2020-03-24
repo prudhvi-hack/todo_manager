@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Todo Management App</title>
+  <link rel="stylesheet" type='text/css' href="./reset.css">
+  <link rel="stylesheet" type='text/css' href="./todos-app.css">
+</head>
+
+<body>
+  <main class=TodoPageMain>
+    <h1 class='TodoPage-heading'>My To-do List</h1>
+    <section class='AddTodo'>
+      <input class='AddTodo-Text' type="text" placeholder="what's next?">
+      <input class='AddTodo-Date' type="date">
+      <input class='AddTodo-Button' type="button" value='Add'>
+    </section>
+    <section class="TodoSection">
+      <div class="TodoSectionTitle">
+        <p class="TodoSectionTitle-text">Due Today</p>
+        <p class="TodoSectionTitle-remainingfraction">0/4</p>
+      </div>
+      <ul>
+        <li class='TodoItem'>
+          <div class='TodoItem-Container'>
+            <input class='TodoItem-checkbox' type="checkbox">
+            <p class='TodoItem-text'>Submit SAAS L-7</p>
+            <p class='TodoItem-overdueLabel'>Overdue</p>
+            <img class="TodoItem-deleteIcon" src="./images/delete.png" alt="deleteicon">
+          </div>
+        </li>
+
+        <li class='TodoItem'>
+          <div class='TodoItem-Container'>
+            <input class='TodoItem-checkbox' type="checkbox">
+            <p class='TodoItem-text'>See Online Classes in google classroom</p>
+            <p class='TodoItem-overdueLabel'></p>
+            <img class="TodoItem-deleteIcon" src="./images/delete.png" alt="deleteicon">
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="TodoSection">
+      <div class="TodoSectionTitle">
+        <p class="TodoSectionTitle-text">Due Tomorrow</p>
+        <p class="TodoSectionTitle-remainingfraction">0/3</p>
+      </div>
+      <ul>
+        <li class='TodoItem'>
+          <div class='TodoItem-Container'>
+            <input class='TodoItem-checkbox' type="checkbox">
+            <p class='TodoItem-text'>Bring home needs sufficient for 21-days</p>
+
+            <img class="TodoItem-deleteIcon" src="./images/delete.png" alt="deleteicon">
+          </div>
+        </li>
+
+      </ul>
+    </section>
+    <section class="TodoSection">
+      <div class="TodoSectionTitle">
+        <p class="TodoSectionTitle-text">Remaining</p>
+        <p class="TodoSectionTitle-remainingfraction">0/4</p>
+      </div>
+      <ul>
+        <li class='TodoItem'>
+          <div class='TodoItem-Container'>
+            <input class='TodoItem-checkbox' type="checkbox">
+            <p class='TodoItem-text'>Sleep for 12 hours</p>
+            <p class='TodoItem-date'>Jan 21</p>
+            <img class="TodoItem-deleteIcon" src="./images/delete.png" alt="deleteicon">
+          </div>
+        </li>
+        <li class='TodoItem'>
+          <div class='TodoItem-Container'>
+            <input class='TodoItem-checkbox' type="checkbox">
+            <p class='TodoItem-text'>Eat 6 times in day</p>
+            <p class='TodoItem-date'>Jan 22</p>
+            <img class="TodoItem-deleteIcon" src="./images/delete.png" alt="deleteicon">
+          </div>
+        </li>
+        <li class='TodoItem'>
+          <div class='TodoItem-Container'>
+            <input class='TodoItem-checkbox' type="checkbox">
+            <p class='TodoItem-text'>Code for 24 hours</p>
+            <p class='TodoItem-date'>Jan 23</p>
+            <img class="TodoItem-deleteIcon" src="./images/delete.png" alt="deleteicon">
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
