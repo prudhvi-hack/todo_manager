@@ -86,17 +86,18 @@ h1 {
 .TodoItem-text {
   color: #453C52;
   font-size: 14px;
-  margin-right: 10px;
 }
 
 .TodoItem-overdueLabel {
   color: #C53030;
   font-size: 12px;
+  margin-left: 10px;
 }
 
 .TodoItem-date {
   color: #453C52;
   font-size: 12px;
+  margin-left: 10px;
 }
 
 .TodoItem-Container:hover {
