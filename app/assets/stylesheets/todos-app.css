@@ -89,6 +89,12 @@ h1 {
   font-size: 14px;
 }
 
+.TodoItem-text-completed {
+  color: #453C52;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
 .TodoItem-date {
   color: #453C52;
   font-size: 12px;

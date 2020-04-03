@@ -8,14 +8,11 @@
           <li class='TodoItem'>
             <div class='TodoItem-Container'>
 
-              <%if todo.completed%>
-                <input class='TodoItem-checkbox' type="checkbox" checked>
-                <del class='TodoItem-text'><%=todo.todo_text%></del>
+              <%checked_string = todo.completed ? "checked": "" %>
+              <%class_name = todo.completed ? "TodoItem-text-completed" : "TodoItem-text" %>
 
-              <%else%>
-                <input class='TodoItem-checkbox' type="checkbox">
-                <p class='TodoItem-text'><%=todo.todo_text%></p>
-              <%end%>
+              <input class='TodoItem-checkbox' type="checkbox" <%=checked_string%>>
+              <p class=<%=class_name%>><%=todo.todo_text%></p>
 
               <%if show_duedate%>
                 <p class='TodoItem-date'><%=todo.due_date.to_s(:short)%></p>
