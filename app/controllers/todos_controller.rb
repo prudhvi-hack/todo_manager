@@ -15,7 +15,8 @@ class TodosController < ApplicationController
 
   def create
     new_todo = Todo.add_task(params)
-    render plain: "new todo created with id #{new_todo.id}"
+    #render plain: "new todo created with id #{new_todo.id}"
+    redirect_to todos_path
   end
 
   def update
@@ -24,6 +25,7 @@ class TodosController < ApplicationController
     todo = Todo.find(id)
     todo.completed = completed
     todo.save
-    render plain: "changed completed status of todo#{id} to #{completed}"
+    #render plain: "changed completed status of todo#{id} to #{completed}"
+    redirect_to todos_path
   end
 end
