@@ -12,14 +12,20 @@
 
               <%checked_string = todo.completed ? "checked": "" %>
               <%class_name = todo.completed ? "TodoItem-text-completed" : "TodoItem-text" %>
-              <%= form_with(url: "/todos#<%=todo.id%>", method: "put") do %>
-                <input class='TodoItem-checkbox' name="completed" type="checkbox" <%=checked_string%>>
-                onclick=this.form.submit()
-              <%end%>
-              <p class=<%=class_name%>><%=todo.todo_text%></p>
+
+              <%= form_with(url:"/todos/#{todo.id}", method: "put") do %>
+                <input
+                  class="TodoItem-checkbox"
+                  name="completed"
+                  type="checkbox" <%= checked_string %>
+                  onclick="this.form.submit()"
+                >
+              <% end %>
+
+              <p class= <%=class_name%> > <%=todo.todo_text%> </p>
 
               <%if show_duedate%>
-              <p class='TodoItem-date'><%=todo.due_date.to_s(:short)%></p>
+                <p class='TodoItem-date'><%=todo.due_date.to_s(:short)%></p>
               <%end%>
               <img class="TodoItem-deleteIcon" src="./images/delete-icon.svg" alt="deleteicon">
 
