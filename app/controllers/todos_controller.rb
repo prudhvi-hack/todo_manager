@@ -33,4 +33,8 @@ class TodosController < ApplicationController
     todo.destroy
     redirect_to todos_path
   end
+
+  def all
+    render #all
+  end
 end
