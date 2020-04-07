@@ -8,7 +8,7 @@
     <%end%>
 
     <%=render partial:'todo-section',locals:{
-      todos: Todo.Overdue.not_completed,
+      todos: Todo.overdue,
       section_title: "Overdue",
       show_duedate: true
     } %>
