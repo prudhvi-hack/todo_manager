@@ -1,28 +1,23 @@
-
-  <main class=TodoPageMain>
-    <h1 class='TodoPage-heading'>My To-do List</h1>
-    <%= form_with(url:"/todos", method: "post") do %>
-      <%=text_field_tag( name='todo_text',value=nil,class:"AddTodo-Text",placeholder: "what's next?")  %>
-      <%=date_field_tag(name='due_date',value=nil,class:"AddTodo-Date")  %>
-      <%=button_tag(value='Add',class: "AddTodo-Button")  %>
-    <%end%>
-
-    <%=render partial:'todo-section',locals:{
+<main class=TodoPageMain>
+  <h1 class='TodoPage-heading'>My To-do List</h1>
+  <%= form_with(url:"/todos", method: "post") do %>
+    <%=text_field_tag( name='todo_text',value=nil,class:"AddTodo-Text",placeholder: "what's next?")  %>
+    <%=date_field_tag(name='due_date',value=nil,class:"AddTodo-Date")  %>
+    <%=button_tag(value='Add',class: "AddTodo-Button")  %>
+  <%end%>
+  <%=render partial:'todo-section',locals:{
       todos: Todo.overdue,
       section_title: "Overdue",
       show_duedate: true
     } %>
-
-    <%=render partial:'todo-section',locals:{
+  <%=render partial:'todo-section',locals:{
       todos: Todo.due_today,
       section_title: "Due Today",
       show_duedate: false
     } %>
-
-    <%=render partial:'todo-section',locals:{
+  <%=render partial:'todo-section',locals:{
       todos: Todo.due_later,
       section_title: "Due Later",
       show_duedate: true
     } %>
-
-  </main>
+</main>

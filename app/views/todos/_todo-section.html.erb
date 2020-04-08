@@ -1,35 +1,33 @@
 <section class="TodoSection">
-      <div class="TodoSectionTitle">
-        <p class="TodoSectionTitle-text"><%=section_title%></p>
-        <p class="TodoSectionTitle-remainingfraction"><%=todos.completed.count%>/<%=todos.count%></p>
-      </div>
-      <ul>
-        <%todos.each do |todo|%>
-          <li class='TodoItem'>
-            <div class='TodoItem-Container'>
-              <%class_name = todo.completed ? "TodoItem-text-completed" : "TodoItem-text" %>
-              <%= form_with(url:"/todos/#{todo.id}", method: "put") do %>
-                <%=check_box_tag(
+  <div class="TodoSectionTitle">
+    <p class="TodoSectionTitle-text"><%=section_title%></p>
+    <p class="TodoSectionTitle-remainingfraction"><%=todos.completed.count%>/<%=todos.count%></p>
+  </div>
+  <ul>
+    <%todos.each do |todo|%>
+      <li class='TodoItem'>
+        <div class='TodoItem-Container'>
+          <%class_name = todo.completed ? "TodoItem-text-completed" : "TodoItem-text" %>
+          <%= form_with(url:"/todos/#{todo.id}", method: "put") do %>
+            <%=check_box_tag(
                   name="completed",
                   value = "1",
                   checked = todo.completed,
                   options = {onclick: "this.form.submit()"})
-                %>
-              <% end %>
-
-              <p class= <%=class_name%> > <%=todo.todo_text%> </p>
-              <%if show_duedate%>
-                <p class='TodoItem-date'><%=todo.due_date.to_s(:short)%></p>
-              <%end%>
-              <%= form_with(url:"/todos/#{todo.id}", method: "delete") do %>
-                <%= image_submit_tag(
+            %>
+          <% end %>
+          <p class= <%=class_name%> > <%=todo.todo_text%> </p>
+          <%if show_duedate%>
+            <p class='TodoItem-date'><%=todo.due_date.to_s(:short)%></p>
+          <%end%>
+          <%= form_with(url:"/todos/#{todo.id}", method: "delete") do %>
+            <%= image_submit_tag(
                    source="delete-icon.svg",
                    class: "TodoItem-deleteIcon", alt: "deleteicon")
-                %>
-              <%end%>
-            </div>
-          </li>
-        <%end%>
-
-      </ul>
+            %>
+          <%end%>
+        </div>
+      </li>
+    <%end%>
+  </ul>
 </section>
