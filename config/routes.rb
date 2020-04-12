@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :users
   get "/", to: "home#index"
   get "/signin", to: "sessions#new", as: :new_sessions
-  post "/signin", to: "sessions#new", as: :sessions
+  post "/signin", to: "sessions#create", as: :sessions
 end
