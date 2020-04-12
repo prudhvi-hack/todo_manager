@@ -1,0 +1,26 @@
+.NewUsers-title {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.Form-section {
+  margin-bottom: 30px;
+}
+
+.Form-input {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.FormInput-label {
+  margin-bottom: 8px;
+  color: #555555
+}
+
+.Form-submit {
+  padding: 10px;
+  font-size: 20px;
+  border: 0px;
+  border-radius: 4px;
+  background-color: #12cf8720;
+}

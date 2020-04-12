@@ -1,4 +1,6 @@
 class Todo < ActiveRecord::Base
+  belongs_to :user
+
   def to_displayable_string
     is_completed = completed ? "[X]" : "[ ]"
     date = due_date.to_s(:long)
