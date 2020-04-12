@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_secure_password
+
   def to_displayable_string
     "name:#{name} gmail:#{gmail} password#{password}"
   end
