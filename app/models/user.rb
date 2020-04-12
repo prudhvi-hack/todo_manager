@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     last_name = newuser[:last_name]
     email = newuser[:email]
     password = newuser[:password_digest]
-    create!(first_name: first_name, last_name: last_name, email: email, password_digest: password)
+    create!(first_name: first_name, last_name: last_name, email: email, password: password)
   end
   def self.check(credentials)
     where("gmail=? and password=?", credentials["email"], credentials["password"]).exists?
