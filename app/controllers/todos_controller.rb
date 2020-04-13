@@ -13,9 +13,13 @@ class TodosController < ApplicationController
   end
 
   def create
-    new_todo = current_user.todos.add_task(params)
-    #render plain: "new todo created with id #{new_todo.id}"
-    redirect_to todos_path
+    new_todo = current_user.todos.new_task(params)
+    if new_todo.save
+      redirect_to todos_path
+    else
+      flash[:error] = new_todo.errors.full_messages.join(",")
+      redirect_to todos_path
+    end
   end
 
   def update

@@ -9,9 +9,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.add_newuser(params)
-    session[:current_user_id] = user.id
-    redirect_to "/"
+    user = User.new_user(params)
+    if user.save
+      session[:current_user_id] = user.id
+      redirect_to "/"
+    else
+      flash[:error] = user.errors.full_messages.join(",")
+      redirect_to new_user_path
+    end
   end
 
   def check
