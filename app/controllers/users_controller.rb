@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.add_newuser(params)
+    session[:current_user_id] = user.id
     redirect_to "/"
   end
 
