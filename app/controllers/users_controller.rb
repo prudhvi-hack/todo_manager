@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     user = User.new_user(params)
     if user.save
       session[:current_user_id] = user.id
+      flash[:success] = "Signed up sucessfully! You are logged in automatically"
       redirect_to "/"
     else
       flash[:error] = user.errors.full_messages.join(", ")

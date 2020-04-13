@@ -14,12 +14,12 @@
           <p class= <%=class_name%> > <%=todo.todo_text%> </p>
           <%if show_duedate%>
             <p class='TodoItem-date'><%=todo.due_date.to_s(:short)%></p>
-          <%end%>
+          <% end %>
           <%= form_with(url:"/todos/#{todo.id}", method: "delete") do %>
             <%= image_submit_tag(source="delete-icon.svg",class: "TodoItem-deleteIcon", alt: "deleteicon")%>
-          <%end%>
+          <% end %>
         </div>
       </li>
-    <%end%>
+    <% end %>
   </ul>
 </section>
